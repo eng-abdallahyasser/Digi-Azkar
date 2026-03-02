@@ -10,9 +10,6 @@ import com.abdallahyasser.digi_azkar.R
 
 class SettingFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = SettingFragment()
-    }
 
     private val viewModel: SettingViewModel by viewModels()
 

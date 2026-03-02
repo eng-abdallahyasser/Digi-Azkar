@@ -10,9 +10,6 @@ import com.abdallahyasser.digi_azkar.R
 
 class PrayerFragment : Fragment() {
 
-    companion object {
-        fun newInstance() = PrayerFragment()
-    }
 
     private val viewModel: PrayerViewModel by viewModels()
 

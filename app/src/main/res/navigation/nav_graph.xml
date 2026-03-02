@@ -1,13 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph">
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
 
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.abdallahyasser.digi_azkar.presentation.home.HomeFragment"
+        android:label="Home" />
 
+    <fragment
+        android:id="@+id/azkarFragment"
+        android:name="com.abdallahyasser.digi_azkar.presentation.azkar.AzkarFragment"
+        android:label="Azkar" />
 
+    <fragment
+        android:id="@+id/prayerFragment"
+        android:name="com.abdallahyasser.digi_azkar.presentation.prayer.PrayerFragment"
+        android:label="Prayer" />
 
-
-
-
+    <fragment
+        android:id="@+id/settingFragment"
+        android:name="com.abdallahyasser.digi_azkar.presentation.setting.SettingFragment"
+        android:label="Settings" />
 
 </navigation>

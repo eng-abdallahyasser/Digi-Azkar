@@ -22,10 +22,4 @@ class AzkarFragment : Fragment() {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_azkar, container, false)
     }
-
-    companion object {
-
-        fun newInstance() =
-            AzkarFragment()
-    }
 }
