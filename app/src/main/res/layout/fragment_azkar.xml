@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0D3B2F"
+    tools:context=".presentation.azkar.AzkarFragment">
+
+    <!-- Content -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingLeft="24dp"
+            android:paddingRight="24dp"
+            android:paddingTop="24dp"
+            android:paddingBottom="110dp"
+            android:gravity="top">
+
+            <!-- Header: icon + title + subtitle -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="8dp">
+
+                <ImageView
+                    android:id="@+id/iv_bookheart"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:src="@android:drawable/ic_menu_agenda"
+                    android:tint="#D4AF37"
+                    android:contentDescription="book heart" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="12dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Azkar Al-Muslim"
+                        android:textSize="24sp"
+                        android:textColor="#F5F5F5"
+                        android:fontFamily="sans-serif" />
+
+                    <TextView
+                        android:id="@+id/tv_subtitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Daily remembrance of Allah"
+                        android:textSize="16sp"
+                        android:textColor="#A8C5B9"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="sans-serif" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <!-- Cards container -->
+            <LinearLayout
+                android:id="@+id/cards_container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:gravity="top"
+                android:divider="@null"
+                android:showDividers="none">
+
+                <!-- Card template: Morning Azkar -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/card_bg"
+                    android:paddingLeft="21dp"
+                    android:paddingRight="21dp"
+                    android:paddingTop="21dp"
+                    android:paddingBottom="14dp"
+                    android:layout_marginBottom="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:id="@+id/tv_morning_title"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Morning Azkar"
+                            android:textSize="18sp"
+                            android:textColor="#F5F5F5"
+                            android:fontFamily="sans-serif" />
+
+                        <ImageView
+                            android:id="@+id/iv_morning_chevron"
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@android:drawable/ic_media_next"
+                            android:tint="#A8C5B9"
+                            android:rotation="90" />
+                    </LinearLayout>
+
+                    <!-- Progress row -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center_vertical">
+
+                        <!-- progress track (green) -->
+                        <FrameLayout
+                            android:layout_width="0dp"
+                            android:layout_height="8dp"
+                            android:layout_weight="1"
+                            android:background="#1A5940"
+                            android:layout_marginEnd="12dp"
+                            android:clipToPadding="false">
+
+                            <!-- progress fill (yellow) approximate width -->
+                            <View
+                                android:layout_width="180dp"
+                                android:layout_height="match_parent"
+                                android:background="#D4AF37" />
+                        </FrameLayout>
+
+                        <!-- badge -->
+                        <TextView
+                            android:id="@+id/tv_morning_count"
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:paddingLeft="6dp"
+                            android:paddingRight="6dp"
+                            android:gravity="center"
+                            android:background="@drawable/badge_gold"
+                            android:text="8/12"
+                            android:textSize="14sp"
+                            android:textColor="#184D3E" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- Card: Evening Azkar -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/card_bg"
+                    android:paddingLeft="21dp"
+                    android:paddingRight="21dp"
+                    android:paddingTop="21dp"
+                    android:paddingBottom="14dp"
+                    android:layout_marginBottom="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Evening Azkar"
+                            android:textSize="18sp"
+                            android:textColor="#F5F5F5"
+                            android:fontFamily="sans-serif" />
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@android:drawable/ic_media_next"
+                            android:tint="#A8C5B9"
+                            android:rotation="90" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center_vertical">
+
+                        <FrameLayout
+                            android:layout_width="0dp"
+                            android:layout_height="8dp"
+                            android:layout_weight="1"
+                            android:background="#1A5940"
+                            android:layout_marginEnd="12dp">
+
+                            <!-- small yellow divider (1px) to indicate 0 progress) -->
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:background="#D4AF37" />
+                        </FrameLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:gravity="center"
+                            android:text="0/12"
+                            android:textSize="14sp"
+                            android:textColor="#A8C5B9" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Card: After Prayer -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/card_bg"
+                    android:paddingLeft="21dp"
+                    android:paddingRight="21dp"
+                    android:paddingTop="21dp"
+                    android:paddingBottom="14dp"
+                    android:layout_marginBottom="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="After Prayer"
+                            android:textSize="18sp"
+                            android:textColor="#F5F5F5"
+                            android:fontFamily="sans-serif" />
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@android:drawable/ic_media_next"
+                            android:tint="#A8C5B9"
+                            android:rotation="90" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center_vertical">
+
+                        <FrameLayout
+                            android:layout_width="0dp"
+                            android:layout_height="8dp"
+                            android:layout_weight="1"
+                            android:background="#1A5940"
+                            android:layout_marginEnd="12dp">
+
+                            <View
+                                android:layout_width="116dp"
+                                android:layout_height="match_parent"
+                                android:background="#D4AF37" />
+                        </FrameLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:gravity="center"
+                            android:text="3/7"
+                            android:textSize="14sp"
+                            android:textColor="#A8C5B9" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Card: Before Sleep -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/card_bg"
+                    android:paddingLeft="21dp"
+                    android:paddingRight="21dp"
+                    android:paddingTop="21dp"
+                    android:paddingBottom="14dp"
+                    android:layout_marginBottom="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Before Sleep"
+                            android:textSize="18sp"
+                            android:textColor="#F5F5F5"
+                            android:fontFamily="sans-serif" />
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@android:drawable/ic_media_next"
+                            android:tint="#A8C5B9"
+                            android:rotation="90" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center_vertical">
+
+                        <FrameLayout
+                            android:layout_width="0dp"
+                            android:layout_height="8dp"
+                            android:layout_weight="1"
+                            android:background="#1A5940"
+                            android:layout_marginEnd="12dp">
+
+                            <View
+                                android:layout_width="1dp"
+                                android:layout_height="match_parent"
+                                android:background="#D4AF37" />
+                        </FrameLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:gravity="center"
+                            android:text="0/5"
+                            android:textSize="14sp"
+                            android:textColor="#A8C5B9" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+                <!-- Card: Daily Remembrance -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="@drawable/card_bg"
+                    android:paddingLeft="21dp"
+                    android:paddingRight="21dp"
+                    android:paddingTop="21dp"
+                    android:paddingBottom="14dp"
+                    android:layout_marginBottom="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="Daily Remembrance"
+                            android:textSize="18sp"
+                            android:textColor="#F5F5F5"
+                            android:fontFamily="sans-serif" />
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:src="@android:drawable/ic_media_next"
+                            android:tint="#A8C5B9"
+                            android:rotation="90" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="12dp"
+                        android:gravity="center_vertical">
+
+                        <FrameLayout
+                            android:layout_width="0dp"
+                            android:layout_height="8dp"
+                            android:layout_weight="1"
+                            android:background="#1A5940"
+                            android:layout_marginEnd="12dp">
+
+                            <View
+                                android:layout_width="131dp"
+                                android:layout_height="match_parent"
+                                android:background="#D4AF37" />
+                        </FrameLayout>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="20dp"
+                            android:gravity="center"
+                            android:text="5/10"
+                            android:textSize="14sp"
+                            android:textColor="#A8C5B9" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

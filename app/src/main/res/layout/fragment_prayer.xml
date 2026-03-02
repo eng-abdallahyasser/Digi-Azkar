@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".presentation.prayer.PrayerFragment">
+
+    <!-- Background Container -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#0D3B2F" />
+
+    <!-- Main Content -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Header Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginEnd="24dp"
+            android:gravity="center_vertical">
+
+            <!-- Title Row with Moon Icon -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="36dp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <!-- Moon Icon -->
+                <ImageView
+                    android:id="@+id/moonIcon"
+                    android:layout_width="28dp"
+                    android:layout_height="28dp"
+                    android:contentDescription="@string/app_name"
+                    android:scaleType="centerInside" />
+
+                <!-- Prayer Title -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="36dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="12dp"
+                    android:text="Prayer"
+                    android:textSize="24sp"
+                    android:textColor="#F5F5F5"
+                    android:fontFamily="sans-serif"
+                    android:gravity="center_vertical" />
+            </LinearLayout>
+
+            <!-- Subtitle -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="24dp"
+                android:text="Connect with Allah"
+                android:textSize="16sp"
+                android:textColor="#A8C5B9"
+                android:layout_marginTop="8dp" />
+        </LinearLayout>
+
+        <!-- Today's Date Container -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="91dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/bg_date_container">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingStart="21dp"
+                android:paddingEnd="21dp"
+                android:paddingTop="21dp"
+                android:paddingBottom="1dp">
+
+                <!-- Calendar Icon and Today Label -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:id="@+id/calendarIcon"
+                        android:layout_width="16dp"
+                        android:layout_height="16dp"
+                        android:contentDescription="@string/app_name"
+                        android:scaleType="centerInside" />
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="20dp"
+                        android:layout_weight="1"
+                        android:layout_marginStart="8dp"
+                        android:text="Today"
+                        android:textSize="14sp"
+                        android:textColor="#A8C5B9"
+                        android:gravity="center_vertical" />
+                </LinearLayout>
+
+                <!-- Date Text -->
+                <TextView
+                    android:id="@+id/dateText"
+                    android:layout_width="match_parent"
+                    android:layout_height="24dp"
+                    android:text="Saturday, February 28, 2026"
+                    android:textSize="16sp"
+                    android:textColor="#F5F5F5"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center_vertical" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <!-- Next Prayer Container -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="137dp"
+            android:layout_marginStart="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/bg_next_prayer_container">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingStart="25dp"
+                android:paddingEnd="25dp"
+                android:paddingTop="25dp"
+                android:paddingBottom="25dp">
+
+                <!-- Next Prayer Label -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:text="Next Prayer"
+                    android:textSize="14sp"
+                    android:textColor="#F5F5F5"
+                    android:alpha="0.8" />
+
+                <!-- Prayer Name -->
+                <TextView
+                    android:id="@+id/nextPrayerName"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:text="Maghrib"
+                    android:textSize="20sp"
+                    android:textColor="#D4AF37"
+                    android:layout_marginTop="28dp"
+                    android:gravity="center_vertical" />
+
+                <!-- Prayer Time -->
+                <TextView
+                    android:id="@+id/nextPrayerTime"
+                    android:layout_width="match_parent"
+                    android:layout_height="24dp"
+                    android:text="in 2h 35m"
+                    android:textSize="16sp"
+                    android:textColor="#F5F5F5"
+                    android:layout_marginTop="34dp" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <!-- Prayer Counter Container -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="236dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginEnd="28dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/bg_counter_container">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingStart="25dp"
+                android:paddingEnd="25dp"
+                android:paddingTop="25dp">
+
+                <!-- Prayer Counter Label -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:text="Prayer Counter"
+                    android:textSize="14sp"
+                    android:textColor="#A8C5B9"
+                    android:textAlignment="center" />
+
+                <!-- Counter Number -->
+                <TextView
+                    android:id="@+id/counterNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="77dp"
+                    android:text="33"
+                    android:textSize="48sp"
+                    android:textColor="#D4AF37"
+                    android:textAlignment="center"
+                    android:gravity="center"
+                    android:layout_marginTop="36dp" />
+
+                <!-- Counter Label -->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:text="Tasbih"
+                    android:textSize="14sp"
+                    android:textColor="#A8C5B9"
+                    android:textAlignment="center"
+                    android:layout_marginTop="17dp" />
+
+                <!-- Tap to Count Button -->
+                <Button
+                    android:id="@+id/tapToCountButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:text="Tap to Count"
+                    android:textSize="16sp"
+                    android:textColor="#0D3B2F"
+                    android:background="@drawable/bg_button_count"
+                    android:layout_marginTop="40dp" />
+            </LinearLayout>
+        </FrameLayout>
+    </LinearLayout>
+
+
+
+</FrameLayout>
