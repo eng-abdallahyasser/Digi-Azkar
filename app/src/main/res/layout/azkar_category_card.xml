@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/card_bg"
+        android:paddingLeft="21dp"
+        android:paddingRight="21dp"
+        android:paddingTop="21dp"
+        android:paddingBottom="14dp"
+        android:layout_marginBottom="12dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical">
+
+            <TextView
+                android:id="@+id/tv_morning_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Morning Azkar"
+                android:textSize="18sp"
+                android:textColor="#F5F5F5"
+                android:fontFamily="sans-serif" />
+
+            <ImageView
+                android:id="@+id/iv_morning_chevron"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/chevronright"
+                android:tint="#A8C5B9"
+                android:rotation="90" />
+        </LinearLayout>
+
+        <!-- Progress row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="12dp"
+            android:gravity="center_vertical">
+
+            <!-- progress track (green) -->
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="8dp"
+                android:layout_weight="1"
+                android:background="#1A5940"
+                android:layout_marginEnd="12dp"
+                android:clipToPadding="false">
+
+                <!-- progress fill (yellow) approximate width -->
+                <View
+                    android:layout_width="180dp"
+                    android:layout_height="match_parent"
+                    android:background="#D4AF37" />
+            </FrameLayout>
+
+            <!-- badge -->
+            <TextView
+                android:id="@+id/tv_morning_count"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:paddingLeft="6dp"
+                android:paddingRight="6dp"
+                android:gravity="center"
+                android:background="@drawable/badge_gold"
+                android:text="8/12"
+                android:textSize="14sp"
+                android:textColor="#184D3E" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+</androidx.cardview.widget.CardView>

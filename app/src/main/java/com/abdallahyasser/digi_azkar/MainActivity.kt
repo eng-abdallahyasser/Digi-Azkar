@@ -57,5 +57,8 @@ class MainActivity : AppCompatActivity() {
         }
 
 
+        binding.bottomNav.
+
+
     }
 }
