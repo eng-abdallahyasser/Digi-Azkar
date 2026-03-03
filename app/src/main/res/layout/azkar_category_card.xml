@@ -1,82 +1,106 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginBottom="12dp"
-    app:cardBackgroundColor="@android:color/transparent"
-    app:cardElevation="0dp">
+    android:layout_height="wrap_content">
 
-    <LinearLayout
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/zker_card_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/card_bg"
-        android:orientation="vertical"
-        android:paddingLeft="21dp"
-        android:paddingTop="21dp"
-        android:paddingRight="21dp"
-        android:paddingBottom="14dp">
+        android:layout_marginBottom="8dp"
+        app:cardBackgroundColor="@android:color/transparent"
+        app:cardElevation="0dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:background="@drawable/card_bg"
+            android:orientation="vertical"
+            android:paddingLeft="21dp"
+            android:paddingTop="21dp"
+            android:paddingRight="21dp"
+            android:paddingBottom="14dp">
 
-            <TextView
-                android:id="@+id/tv_category_title"
-                android:layout_width="0dp"
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:fontFamily="sans-serif"
-                android:textColor="#F5F5F5"
-                android:textSize="18sp"
-                tools:text="Morning Azkar" xmlns:tools="http://schemas.android.com/tools" />
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
 
-            <ImageView
-                android:id="@+id/iv_chevron"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:src="@drawable/chevronright"
-                app:tint="#A8C5B9" />
-        </LinearLayout>
-
-        <!-- Progress row -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="12dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
-
-            <!-- progress track (green) -->
-            <FrameLayout
-                android:layout_width="0dp"
-                android:layout_height="8dp"
-                android:layout_weight="1"
-                android:background="#1A5940"
-                android:layout_marginEnd="12dp">
-
-                <View
-                    android:id="@+id/view_progress_fill"
+                <TextView
+                    android:id="@+id/tv_category_title"
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:background="#D4AF37" />
-            </FrameLayout>
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="sans-serif"
+                    android:textColor="#F5F5F5"
+                    android:textSize="18sp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    tools:text="Morning Azkar" xmlns:tools="http://schemas.android.com/tools" />
 
-            <!-- badge -->
-            <TextView
-                android:id="@+id/tv_progress_text"
-                android:layout_width="wrap_content"
-                android:layout_height="20dp"
-                android:background="@drawable/badge_gold"
-                android:gravity="center"
-                android:paddingLeft="6dp"
-                android:paddingRight="6dp"
-                android:textColor="#184D3E"
-                android:textSize="14sp"
-                tools:text="8/12" xmlns:tools="http://schemas.android.com/tools" />
+                <ImageView
+                    android:id="@+id/iv_chevron"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/chevronright"
+                    app:tint="#A8C5B9" />
+            </LinearLayout>
+
+            <!-- Progress row -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <!-- progress track (green) -->
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="8dp"
+                    android:layout_weight="1"
+                    android:background="#1A5940"
+                    android:layout_marginEnd="12dp">
+
+                    <View
+                        android:id="@+id/view_progress_fill"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:background="#D4AF37" />
+                </FrameLayout>
+
+                <!-- badge -->
+                <TextView
+                    android:id="@+id/tv_progress_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="20dp"
+                    android:background="@drawable/badge_gold"
+                    android:gravity="center"
+                    android:paddingLeft="6dp"
+                    android:paddingRight="6dp"
+                    android:textColor="#184D3E"
+                    android:textSize="14sp"
+                    tools:text="8/12" xmlns:tools="http://schemas.android.com/tools" />
+            </LinearLayout>
+
         </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
-    </LinearLayout>
-</androidx.cardview.widget.CardView>
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_zekr_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/zekr_card"
+
+        >
+
+    </androidx.recyclerview.widget.RecyclerView>
+</LinearLayout>

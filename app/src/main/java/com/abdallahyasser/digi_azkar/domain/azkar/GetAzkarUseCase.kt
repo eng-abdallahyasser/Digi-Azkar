@@ -1,4 +1,4 @@
-package com.abdallahyasser.digi_azkar.domain
+package com.abdallahyasser.digi_azkar.domain.azkar
 
 class GetAzkarUseCase(repo: AzkarRepositoryInter) {
     private val repository = repo

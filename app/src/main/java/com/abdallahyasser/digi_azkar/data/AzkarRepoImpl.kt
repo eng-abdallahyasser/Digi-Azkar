@@ -1,8 +1,8 @@
 package com.abdallahyasser.digi_azkar.data
 
 import android.content.Context
-import com.abdallahyasser.digi_azkar.domain.AzkarRepositoryInter
-import com.abdallahyasser.digi_azkar.domain.Zekr
+import com.abdallahyasser.digi_azkar.domain.azkar.AzkarRepositoryInter
+import com.abdallahyasser.digi_azkar.domain.azkar.Zekr
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.json.JSONArray

@@ -4,14 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.compose.runtime.savedinstancestate.savedInstanceState
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.abdallahyasser.digi_azkar.data.AzkarRepoImpl
 import com.abdallahyasser.digi_azkar.databinding.FragmentAzkarBinding
-import com.abdallahyasser.digi_azkar.domain.GetAzkarUseCase
-import com.abdallahyasser.digi_azkar.domain.ZekrCategory
-import com.abdallahyasser.digi_azkar.presentation.azkar.ViewModelFactory
+import com.abdallahyasser.digi_azkar.domain.azkar.GetAzkarUseCase
 
 class AzkarFragment : Fragment() {
 
@@ -24,7 +21,7 @@ class AzkarFragment : Fragment() {
         ViewModelFactory(useCase)
     }
 
-    private lateinit var adapter: ZekrCategoryAdapter
+    private lateinit var categoryAdapter: ZekrCategoryAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -37,19 +34,32 @@ class AzkarFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setupRecyclerView()
+        setupListeners()
+        setupRecyclerViews()
         observeViewModel()
     }
 
-    private fun setupRecyclerView() {
-        adapter = ZekrCategoryAdapter()
-        binding.rvAzkarCategories.adapter = adapter
+    private fun setupListeners() {
+//        binding.rvAzkarCategories.
+    }
+
+    private fun setupRecyclerViews() {
+        categoryAdapter = ZekrCategoryAdapter()
+        binding.rvAzkarCategories.adapter = categoryAdapter
     }
 
     private fun observeViewModel() {
         viewModel.azkarCategories.observe(viewLifecycleOwner) { categories ->
-            adapter.setData(categories)
+            categoryAdapter.setData(categories)
         }
+
+        viewModel.azkarCategoriesShown.observe(viewLifecycleOwner) { shownCategories ->
+            if(shownCategories!=null){
+                categoryAdapter.updateShownCategories(shownCategories)
+            }
+
+        }
+
     }
 
 //    override fun onDestroyView() {

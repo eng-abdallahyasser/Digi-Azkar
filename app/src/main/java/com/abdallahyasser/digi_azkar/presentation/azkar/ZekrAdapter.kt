@@ -5,11 +5,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView.*
 import com.abdallahyasser.digi_azkar.R
-import com.abdallahyasser.digi_azkar.domain.Zekr
+import com.abdallahyasser.digi_azkar.domain.azkar.Zekr
+import kotlin.collections.mutableListOf
 
-class ZekrAdapter(val azkar: List<Zekr>) : Adapter<ZekrViewHolder>() {
+class ZekrAdapter() : Adapter<ZekrViewHolder>() {
 
-    private var zekrList: List<Zekr> = emptyList()
+    private var zekrList = mutableListOf<Zekr>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ZekrViewHolder {
         val view = inflate(parent.context, R.layout.zekr_card, null)
@@ -23,6 +24,11 @@ class ZekrAdapter(val azkar: List<Zekr>) : Adapter<ZekrViewHolder>() {
 
     override fun getItemCount(): Int {
         return zekrList.size
+    }
+    fun setData(newList: List<Zekr>) {
+        zekrList.clear()
+        zekrList.addAll(newList)
+        notifyDataSetChanged()
     }
 }
 
