@@ -1,25 +1,59 @@
 package com.abdallahyasser.digi_azkar.presentation.azkar
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.abdallahyasser.digi_azkar.R
+import androidx.compose.runtime.savedinstancestate.savedInstanceState
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import com.abdallahyasser.digi_azkar.data.AzkarRepoImpl
+import com.abdallahyasser.digi_azkar.databinding.FragmentAzkarBinding
+import com.abdallahyasser.digi_azkar.domain.GetAzkarUseCase
+import com.abdallahyasser.digi_azkar.domain.ZekrCategory
+import com.abdallahyasser.digi_azkar.presentation.azkar.ViewModelFactory
 
 class AzkarFragment : Fragment() {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    private var _binding: FragmentAzkarBinding? = null
+    private val binding get() = _binding!!
 
-        // TODO: Use the ViewModel
+    private val viewModel: AzkarViewModel by viewModels {
+        val repo = AzkarRepoImpl(requireContext())
+        val useCase = GetAzkarUseCase(repo)
+        ViewModelFactory(useCase)
     }
+
+    private lateinit var adapter: ZekrCategoryAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_azkar, container, false)
+    ): View {
+        _binding = FragmentAzkarBinding.inflate(inflater, container, false)
+        return binding.root
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        setupRecyclerView()
+        observeViewModel()
+    }
+
+    private fun setupRecyclerView() {
+        adapter = ZekrCategoryAdapter()
+        binding.rvAzkarCategories.adapter = adapter
+    }
+
+    private fun observeViewModel() {
+        viewModel.azkarCategories.observe(viewLifecycleOwner) { categories ->
+            adapter.setData(categories)
+        }
+    }
+
+//    override fun onDestroyView() {
+//        super.onViewCreated(view, savedInstanceState)
+//        _binding = null
+//    }
 }

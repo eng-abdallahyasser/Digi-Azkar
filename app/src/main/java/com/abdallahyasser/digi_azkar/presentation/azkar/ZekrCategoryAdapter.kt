@@ -1,32 +1,42 @@
 package com.abdallahyasser.digi_azkar.presentation.azkar
 
-import android.view.View
+import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView.*
-import com.abdallahyasser.digi_azkar.R
+import com.abdallahyasser.digi_azkar.databinding.AzkarCategoryCardBinding
 import com.abdallahyasser.digi_azkar.domain.ZekrCategory
 
-class ZekrCategoryAdapter(val zekrCategory:List<ZekrCategory> ): Adapter<ZekrCategoryViewHolder>() {
+class ZekrCategoryAdapter(): Adapter<ZekrCategoryViewHolder>() {
+
+
+    private val zekrCategories = mutableListOf<ZekrCategory>()
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ZekrCategoryViewHolder {
-        val view = inflate(parent.context, R.layout.azkar_category_card, null)
-        return ZekrCategoryViewHolder(view)
+        val binding = AzkarCategoryCardBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return ZekrCategoryViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ZekrCategoryViewHolder, position: Int) {
-        holder.bind(zekrCategory[position])
+        holder.bind(zekrCategories[position])
     }
 
-    override fun getItemCount(): Int = zekrCategory.size
+    override fun getItemCount(): Int = zekrCategories.size
+
+    fun setData(newList: List<ZekrCategory>) {
+        zekrCategories.clear()
+        zekrCategories.addAll(newList)
+        notifyDataSetChanged()
+    }
 
 }
 
-class ZekrCategoryViewHolder(view : View): ViewHolder(view) {
+class ZekrCategoryViewHolder(val binding : AzkarCategoryCardBinding): ViewHolder(binding.root) {
 
 
     fun bind(zekrCategory: ZekrCategory) {
-        TODO("Not yet implemented")
+        binding.tvCategoryTitle.text = zekrCategory.categoryName
+        binding.tvProgressText.text = "0/${zekrCategory.zekrList.size}"
     }
 
 }
