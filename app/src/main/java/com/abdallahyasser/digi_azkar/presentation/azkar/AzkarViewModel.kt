@@ -11,11 +11,9 @@ import kotlinx.coroutines.launch
 class AzkarViewModel(private val getAzkarUseCase: GetAzkarUseCase): ViewModel() {
 
 
-    private val _azkarCategoriesShown = MutableLiveData<List<Boolean>>()
 
     private val _azkarCategories = MutableLiveData<List<ZekrCategory>>()
     val azkarCategories: LiveData<List<ZekrCategory>> = _azkarCategories
-    val azkarCategoriesShown: LiveData<List<Boolean>> = _azkarCategoriesShown
 
 
     init {
@@ -33,24 +31,6 @@ class AzkarViewModel(private val getAzkarUseCase: GetAzkarUseCase): ViewModel() 
                 )
             }
             _azkarCategories.postValue(categories)
-            _azkarCategoriesShown.postValue(List(categories.size) { false })
         }
-    }
-
-    fun onCategoryClicked(zekrCategory: ZekrCategory) {
-
-        val currentShownCategories = _azkarCategoriesShown.value ?: emptyList()
-
-        val updatedShownCategories = currentShownCategories.toMutableList()
-
-        val index = _azkarCategories.value?.indexOf(zekrCategory) ?: -1
-
-
-        if (index != -1) {
-            updatedShownCategories[index] = !updatedShownCategories[index]
-
-        }
-
-        _azkarCategoriesShown.postValue(updatedShownCategories)
     }
 }

@@ -1,15 +1,15 @@
-package com.abdallahyasser.digi_azkar.presentation.home
+package com.abdallahyasser.digi_azkar.presentation.prayers
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.abdallahyasser.digi_azkar.domain.prayer.GetPrayerTimesUseCase
+import com.abdallahyasser.digi_azkar.data.PrayerRepoImpl
 import com.abdallahyasser.digi_azkar.domain.prayer.Prayer
 import kotlinx.coroutines.launch
 
-class HomeViewModel(private val getPrayerTimesUseCase: GetPrayerTimesUseCase): ViewModel() {
+class PrayerViewModel : ViewModel() {
+    private val prayerRepository = PrayerRepoImpl()
 
     private val _prayerTimes = MutableLiveData<List<Prayer>>()
     val prayerTimes: LiveData<List<Prayer>> = _prayerTimes
@@ -20,17 +20,12 @@ class HomeViewModel(private val getPrayerTimesUseCase: GetPrayerTimesUseCase): V
     private val _errorMessage = MutableLiveData<String>()
     val errorMessage: LiveData<String> = _errorMessage
 
-    init{
-        getPrayerTimes()
-    }
-
     fun getPrayerTimes(city: String = "Cairo", country: String = "Egypt") {
         viewModelScope.launch {
-            val allPrayerTimes = getPrayerTimesUseCase()
             _isLoading.value = true
             try {
-                Log.d("HomeViewModel", "Prayer times: $allPrayerTimes")
-                _prayerTimes.value = allPrayerTimes
+                val prayers = prayerRepository.getPrayerTimes(city, country)
+                _prayerTimes.value = prayers
                 _errorMessage.value = ""
             } catch (e: Exception) {
                 _errorMessage.value = "Error fetching prayer times: ${e.message}"
@@ -40,6 +35,5 @@ class HomeViewModel(private val getPrayerTimesUseCase: GetPrayerTimesUseCase): V
             }
         }
     }
-
-
 }
+

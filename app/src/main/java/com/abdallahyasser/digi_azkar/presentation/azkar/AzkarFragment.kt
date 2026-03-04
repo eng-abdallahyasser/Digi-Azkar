@@ -53,13 +53,6 @@ class AzkarFragment : Fragment() {
             categoryAdapter.setData(categories)
         }
 
-        viewModel.azkarCategoriesShown.observe(viewLifecycleOwner) { shownCategories ->
-            if(shownCategories!=null){
-                categoryAdapter.updateShownCategories(shownCategories)
-            }
-
-        }
-
     }
 
 //    override fun onDestroyView() {
