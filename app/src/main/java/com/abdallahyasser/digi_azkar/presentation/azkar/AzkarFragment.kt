@@ -16,7 +16,7 @@ class AzkarFragment : Fragment() {
     private val binding get() = _binding!!
 
     private val viewModel: AzkarViewModel by viewModels {
-        val repo = AzkarRepoImpl(requireContext())
+        val repo = AzkarRepoImpl()
         val useCase = GetAzkarUseCase(repo)
         ViewModelFactory(useCase)
     }
@@ -34,13 +34,8 @@ class AzkarFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        setupListeners()
         setupRecyclerViews()
         observeViewModel()
-    }
-
-    private fun setupListeners() {
-//        binding.rvAzkarCategories.
     }
 
     private fun setupRecyclerViews() {
@@ -52,11 +47,10 @@ class AzkarFragment : Fragment() {
         viewModel.azkarCategories.observe(viewLifecycleOwner) { categories ->
             categoryAdapter.setData(categories)
         }
-
     }
 
-//    override fun onDestroyView() {
-//        super.onViewCreated(view, savedInstanceState)
-//        _binding = null
-//    }
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }

@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.abdallahyasser.digi_azkar.data.PrayerRepoImpl
+import com.abdallahyasser.digi_azkar.data.prayer.PrayerRepoImpl
 import com.abdallahyasser.digi_azkar.domain.prayer.Prayer
 import kotlinx.coroutines.launch
 

@@ -6,8 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.util.Log
 import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.LinearLayoutManager
-import com.abdallahyasser.digi_azkar.data.PrayerRepoImpl
+import com.abdallahyasser.digi_azkar.data.prayer.PrayerRepoImpl
 
 
 class PrayerTimesFragment : Fragment() {

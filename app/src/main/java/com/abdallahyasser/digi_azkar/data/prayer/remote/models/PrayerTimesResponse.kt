@@ -1,4 +1,4 @@
-package com.abdallahyasser.digi_azkar.data.remote.models
+package com.abdallahyasser.digi_azkar.data.prayer.remote.models
 
 import com.squareup.moshi.Json
 import com.squareup.moshi.JsonClass

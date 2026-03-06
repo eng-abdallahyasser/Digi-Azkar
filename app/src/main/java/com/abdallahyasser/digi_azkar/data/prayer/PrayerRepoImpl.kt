@@ -1,13 +1,13 @@
-package com.abdallahyasser.digi_azkar.data
+package com.abdallahyasser.digi_azkar.data.prayer
 
-import com.abdallahyasser.digi_azkar.data.remote.RetrofitClient
-import com.abdallahyasser.digi_azkar.data.remote.api.PrayerTimesApi
-import com.abdallahyasser.digi_azkar.data.remote.toDomain
+import com.abdallahyasser.digi_azkar.data.prayer.remote.PrayerRetrofitClient
+import com.abdallahyasser.digi_azkar.data.prayer.remote.api.PrayerTimesApi
+import com.abdallahyasser.digi_azkar.data.prayer.remote.toDomain
 import com.abdallahyasser.digi_azkar.domain.prayer.Prayer
 import com.abdallahyasser.digi_azkar.domain.prayer.PrayerRepoInterface
 
 class PrayerRepoImpl: PrayerRepoInterface {
-    private val prayerTimesApi = RetrofitClient.createService(PrayerTimesApi::class.java)
+    private val prayerTimesApi = PrayerRetrofitClient.createService(PrayerTimesApi::class.java)
 
     override suspend fun getPrayerTimes(city: String, country: String): List<Prayer> {
         return try {

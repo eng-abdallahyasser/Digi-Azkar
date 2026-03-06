@@ -1,11 +1,11 @@
-package com.abdallahyasser.digi_azkar.data.remote
+package com.abdallahyasser.digi_azkar.data.prayer.remote
 
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 
-object RetrofitClient {
+object PrayerRetrofitClient {
 
     private val moshi = Moshi.Builder()
         .addLast(KotlinJsonAdapterFactory())

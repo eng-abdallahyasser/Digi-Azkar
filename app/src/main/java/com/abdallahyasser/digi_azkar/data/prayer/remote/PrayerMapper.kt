@@ -1,6 +1,6 @@
-package com.abdallahyasser.digi_azkar.data.remote
+package com.abdallahyasser.digi_azkar.data.prayer.remote
 
-import com.abdallahyasser.digi_azkar.data.remote.models.PrayerTimesResponse
+import com.abdallahyasser.digi_azkar.data.prayer.remote.models.PrayerTimesResponse
 import com.abdallahyasser.digi_azkar.domain.prayer.Prayer
 
 

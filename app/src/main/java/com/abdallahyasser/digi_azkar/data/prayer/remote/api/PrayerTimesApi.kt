@@ -1,6 +1,6 @@
-package com.abdallahyasser.digi_azkar.data.remote.api
+package com.abdallahyasser.digi_azkar.data.prayer.remote.api
 
-import com.abdallahyasser.digi_azkar.data.remote.models.PrayerTimesResponse
+import com.abdallahyasser.digi_azkar.data.prayer.remote.models.PrayerTimesResponse
 import retrofit2.http.GET
 import retrofit2.http.Query
 
