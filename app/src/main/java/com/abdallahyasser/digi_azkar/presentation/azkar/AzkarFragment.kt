@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import com.abdallahyasser.digi_azkar.data.AzkarRepoImpl
+import com.abdallahyasser.digi_azkar.data.azkar.AzkarRepoImpl
 import com.abdallahyasser.digi_azkar.databinding.FragmentAzkarBinding
 import com.abdallahyasser.digi_azkar.domain.azkar.GetAzkarUseCase
 

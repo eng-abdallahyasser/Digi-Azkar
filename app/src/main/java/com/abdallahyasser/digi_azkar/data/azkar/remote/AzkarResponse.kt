@@ -6,7 +6,7 @@ import com.squareup.moshi.JsonClass
 @JsonClass(generateAdapter = true)
 class AzkarResponse(
     val title: String,
-            val content:List<ZekrResponse>
+    val content:List<ZekrResponse>
 )
 
 @JsonClass(generateAdapter = true)

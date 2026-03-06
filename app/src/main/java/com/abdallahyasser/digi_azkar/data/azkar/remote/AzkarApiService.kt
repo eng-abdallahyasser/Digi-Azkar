@@ -6,4 +6,10 @@ import retrofit2.http.GET
 interface AzkarApiService {
     @GET("json/azkar_sabah.json")
     suspend fun getMorningAzkar(): AzkarResponse
+
+    @GET("json/azkar_massa.json")
+    suspend fun getEveningAzkar(): AzkarResponse
+
+    @GET("json/PostPrayer_azkar.json")
+    suspend fun getPostPrayerAzkar(): AzkarResponse
 }
