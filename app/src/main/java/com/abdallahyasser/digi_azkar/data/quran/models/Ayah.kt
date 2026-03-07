@@ -1,4 +1,4 @@
-package com.abdallahyasser.digi_azkar.data.quran
+package com.abdallahyasser.digi_azkar.data.quran.models
 
 data class Ayah(
     val number: Int,

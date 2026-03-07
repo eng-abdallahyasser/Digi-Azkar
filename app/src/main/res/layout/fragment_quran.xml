@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFFFFF"
-    tools:context=".presentation.prayer.PrayerFragment">
+    tools:context=".presentation.quran.QuranFragment">
 
     <!-- Background Container -->
     <FrameLayout
@@ -40,6 +40,7 @@
                     android:id="@+id/moonIcon"
                     android:layout_width="28dp"
                     android:layout_height="28dp"
+                    android:src="@drawable/quran"
                     android:contentDescription="@string/app_name"
                     android:scaleType="centerInside" />
 
@@ -49,7 +50,7 @@
                     android:layout_height="36dp"
                     android:layout_weight="1"
                     android:layout_marginStart="12dp"
-                    android:text="Prayer"
+                    android:text="Quran"
                     android:textSize="24sp"
                     android:textColor="#F5F5F5"
                     android:fontFamily="sans-serif"

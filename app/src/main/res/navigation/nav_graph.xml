@@ -15,8 +15,8 @@
         android:label="Azkar" />
 
     <fragment
-        android:id="@+id/prayerFragment"
-        android:name="com.abdallahyasser.digi_azkar.presentation.prayer.PrayerFragment"
+        android:id="@+id/quran_fragment"
+        android:name="com.abdallahyasser.digi_azkar.presentation.quran.QuranFragment"
         android:label="Prayer" />
 
     <fragment

@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.abdallahyasser.digi_azkar.domain.azkar.GetAzkarUseCase
 import com.abdallahyasser.digi_azkar.domain.azkar.ZekrCategory
 import kotlinx.coroutines.launch
+import okhttp3.internal.notify
 
 class AzkarViewModel(private val getAzkarUseCase: GetAzkarUseCase): ViewModel() {
 
@@ -32,5 +33,7 @@ class AzkarViewModel(private val getAzkarUseCase: GetAzkarUseCase): ViewModel() 
             }
             _azkarCategories.postValue(categories)
         }
+
+
     }
 }

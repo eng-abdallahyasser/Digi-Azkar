@@ -10,9 +10,9 @@
         android:title="Azkar"
         android:icon="@drawable/zker"/>
     <item
-        android:id="@+id/prayerFragment"
-        android:title="prayer"
-        android:icon="@drawable/prayer"/>
+        android:id="@+id/quran_fragment"
+        android:title="Quran"
+        android:icon="@drawable/quran"/>
     <item
         android:id="@+id/settingFragment"
         android:title="Settings"

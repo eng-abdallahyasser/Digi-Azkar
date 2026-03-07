@@ -1,4 +1,4 @@
-package com.abdallahyasser.digi_azkar.presentation.prayer
+package com.abdallahyasser.digi_azkar.presentation.quran
 
 import androidx.fragment.app.viewModels
 import android.os.Bundle
@@ -8,21 +8,20 @@ import android.view.View
 import android.view.ViewGroup
 import com.abdallahyasser.digi_azkar.R
 
-class PrayerFragment : Fragment() {
+class QuranFragment : Fragment() {
 
 
-    private val viewModel: PrayerViewModel by viewModels()
+    private val viewModel: QuranViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        // TODO: Use the ViewModel
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.fragment_prayer, container, false)
+        return inflater.inflate(R.layout.fragment_quran, container, false)
     }
 }
