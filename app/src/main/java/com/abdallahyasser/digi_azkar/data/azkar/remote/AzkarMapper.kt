@@ -1,5 +1,6 @@
 package com.abdallahyasser.digi_azkar.data.azkar.remote
 
+import com.abdallahyasser.digi_azkar.data.azkar.remote.models.AzkarResponse
 import com.abdallahyasser.digi_azkar.domain.azkar.Zekr
 
 fun AzkarResponse.toDomain(category: String) : List<Zekr> {

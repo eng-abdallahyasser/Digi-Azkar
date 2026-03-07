@@ -1,6 +1,7 @@
 package com.abdallahyasser.digi_azkar.data.azkar.remote
 
 
+import com.abdallahyasser.digi_azkar.data.azkar.remote.models.AzkarResponse
 import retrofit2.http.GET
 
 interface AzkarApiService {
